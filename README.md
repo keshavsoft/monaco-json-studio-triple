@@ -13,7 +13,6 @@
 npx monaco-json-studio-triple
 npx monaco-json-studio-triple file-picker status
 npx monaco-json-studio-triple select stats
-npx monaco-json-studio-triple actions cursor
 ```
 
 ## Programmatic (`npm`)

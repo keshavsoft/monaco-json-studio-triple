@@ -1,0 +1,15 @@
+.studio-app {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.studio-app .region-header { flex: 0 0 44px; }
+.studio-app .body-workspace {
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+}
+.studio-app .region-footer { flex: 0 0 28px; }
