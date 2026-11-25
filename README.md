@@ -1,6 +1,6 @@
 # monaco-json-studio-triple
 
-Dedicated 3-pane static Monaco JSON Studio generator built on `monaco-json-studio-base`.
+Dedicated 3-pane static Monaco JSON Studio generator (`v2`) directly composing [`monaco-json-studio-base-header`](https://www.npmjs.com/package/monaco-json-studio-base-header), [`monaco-json-studio-base-body`](https://www.npmjs.com/package/monaco-json-studio-base-body) (`triple`), and [`monaco-json-studio-base-footer`](https://www.npmjs.com/package/monaco-json-studio-base-footer).
 
 - **npm**: [https://www.npmjs.com/package/monaco-json-studio-triple](https://www.npmjs.com/package/monaco-json-studio-triple)
 - **Suite Story & Docs**: [https://keshavsoft.github.io/monaco-json-studio-docs/triple.html](https://keshavsoft.github.io/monaco-json-studio-docs/triple.html)

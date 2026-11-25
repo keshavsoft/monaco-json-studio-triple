@@ -20,14 +20,18 @@
   "files": [
     "src",
     "bin",
+    "assets",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --check src/index.js && node --check src/v1/index.js && node --check bin/index.js"
+    "test": "node --check src/index.js && node --check src/v1/index.js && node --check src/v2/index.js && node --check bin/index.js"
   },
   "dependencies": {
-    "monaco-json-studio-base": "^1.0.0"
+    "handlebars": "^4.7.10",
+    "monaco-json-studio-base-body": "^1.0.0",
+    "monaco-json-studio-base-footer": "^1.0.0",
+    "monaco-json-studio-base-header": "^1.0.0"
   },
   "keywords": [
     "monaco",

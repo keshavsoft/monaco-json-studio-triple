@@ -1,35 +1,33 @@
 #!/usr/bin/env node
-import { HEADER_TYPES, FOOTER_TYPES } from 'monaco-json-studio-base';
-import { createTripleStudio } from '../src/index.js';
+import { HEADER_TYPES, FOOTER_TYPES, createTripleStudio } from '../src/index.js';
 
 const args = process.argv.slice(2);
 
 if (args.includes('--help') || args.includes('-h')) {
     console.log(`
-Monaco JSON Studio · Triple
+Monaco JSON Studio · Triple (v2)
 
 Usage:
-  npx monaco-json-studio-triple [pane1] [pane2] [pane3]
+  npx monaco-json-studio-triple [header] [footer]
 
-Each pane uses <header>:<footer?>:
-  header : ${HEADER_TYPES.join(' | ')}
-  footer : ${FOOTER_TYPES.join(' | ')}
+Options:
+  header : ${HEADER_TYPES.join(' | ')} (default: file-picker)
+  footer : ${FOOTER_TYPES.join(' | ')} (default: status)
 
 Examples:
   npx monaco-json-studio-triple
-  npx monaco-json-studio-triple file-picker:cursor select:cursor title:note
-  npx monaco-json-studio-triple file-picker:cursor
+  npx monaco-json-studio-triple file-picker status
+  npx monaco-json-studio-triple select stats
+  npx monaco-json-studio-triple actions cursor
 `);
     process.exit(0);
 }
 
-const pane1 = args[0] ?? 'file-picker:cursor';
-const pane2 = args[1] ?? (args.length === 1 ? pane1 : 'file-picker:cursor');
-const pane3 = args[2] ?? (args.length === 1 ? pane1 : 'title:note');
+const [header = 'file-picker', footer = 'status'] = args;
 
 try {
-    const targetDir = createTripleStudio({ pane1, pane2, pane3 });
-    console.log(`Generated Triple Studio (${pane1} | ${pane2} | ${pane3}).`);
+    const targetDir = createTripleStudio({ header, footer });
+    console.log(`Generated Triple Studio v2 (${header} / ${footer}).`);
     console.log(`Open: ${targetDir}/index.html`);
 } catch (error) {
     console.error(`Could not generate Triple Studio: ${error.message}`);
