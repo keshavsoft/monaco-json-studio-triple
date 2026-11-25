@@ -1,31 +1,29 @@
 # monaco-json-studio-triple
 
-Dedicated 3-pane static Monaco JSON Studio generator (`v2`) directly composing [`monaco-json-studio-base-header`](https://www.npmjs.com/package/monaco-json-studio-base-header), [`monaco-json-studio-base-body`](https://www.npmjs.com/package/monaco-json-studio-base-body) (`triple`), and [`monaco-json-studio-base-footer`](https://www.npmjs.com/package/monaco-json-studio-base-footer).
+3-pane static Monaco JSON Studio generator composing base-header, base-body (triple), and base-footer.
 
 - **npm**: [https://www.npmjs.com/package/monaco-json-studio-triple](https://www.npmjs.com/package/monaco-json-studio-triple)
-- **Suite Story & Docs**: [https://keshavsoft.github.io/monaco-json-studio-docs/triple.html](https://keshavsoft.github.io/monaco-json-studio-docs/triple.html)
-- **Repo Docs**: [./docs/index.html](./docs/index.html) | [https://keshavsoft.github.io/monaco-json-studio-triple/](https://keshavsoft.github.io/monaco-json-studio-triple/)
+- **GitHub**: [https://github.com/keshavsoft/monaco-json-studio-triple](https://github.com/keshavsoft/monaco-json-studio-triple)
+- **Docs**: [https://keshavsoft.github.io/monaco-json-studio-triple/](https://keshavsoft.github.io/monaco-json-studio-triple/) ([Story](./docs/story.html) · [npx](./docs/npx-usage.html) · [npm](./docs/npm-usage.html) · [Dependencies](./docs/dependencies.html))
+- **Suite**: [Studio Docs](https://keshavsoft.github.io/monaco-json-studio-docs/triple.html)
 
-## Why It Exists
-
-Three-pane pipelines (Input → Spec/Rules → Output) need three independent columns with distinct defaults and per-pane controls. Built on `monaco-json-studio-base`, Triple keeps CLI usage straightforward and generates non-overwriting output folders.
-
-## CLI Usage
+## CLI (`npx`)
 
 ```bash
 npx monaco-json-studio-triple
-npx monaco-json-studio-triple file-picker:cursor select:cursor title:note
-npx monaco-json-studio-triple file-picker:cursor
+npx monaco-json-studio-triple file-picker status
+npx monaco-json-studio-triple select stats
+npx monaco-json-studio-triple actions cursor
 ```
 
-## Programmatic Usage
+## Programmatic (`npm`)
+
+```bash
+npm install monaco-json-studio-triple
+```
 
 ```js
 import { createTripleStudio } from 'monaco-json-studio-triple';
 
-createTripleStudio({
-  pane1: 'file-picker:cursor',
-  pane2: 'file-picker:cursor',
-  pane3: 'title:note'
-});
+createTripleStudio({ header: 'actions', footer: 'status' });
 ```
